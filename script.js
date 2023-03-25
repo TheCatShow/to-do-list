@@ -1,28 +1,30 @@
 
-let input = document.querySelector('input');
+let input = document.querySelector('#taskInput');
 let text = document.querySelector('text');
 let addBtn = document.querySelector('#addBtn');
 let list = document.querySelector('#list');
-let container = document.querySelector('container');
-let item = document.createElement('item');
 
 addBtn.addEventListener('click', function (event) {
+    event.preventDefault();
     let li = document.createElement('li');
     li.classList.add('item');
-    event.preventDefault();
-    list.append(input.value);
-    
+    list.append(li);
+    li.textContent = input.value;
+
     let div = document.createElement('div');
-    div.append(item);
+    li.append(div);
     div.classList.add('item__btns');
 
     let i = document.createElement('i');
-    i.classList.add('fa-regular fa-square-check');
-    i.append(item__btns);
-    item.classList.toggle(done);
+    console.log(i);
+    i.className = 'fa-regular fa-square-check';
+    div.append(i);
+    i.addEventListener('click', function(){
+        li.classList.toggle('done');
+    })
 
-    let l = document.createElement('l');
-    l.classList.add('fa-solid fa-trash-can');
-    l.append(item__btns);
-    ul.removeChild(li);
+    //  let l = document.createElement('l');
+    //  l.className = 'fa-solid fa-trash-can';
+    //  l.append(div);
+    //  li.remove();
 })
