@@ -23,6 +23,14 @@ addBtn.addEventListener('click', function (event) {
         li.classList.toggle('done');
     })
 
+    let i2 = document.createElement('i2');
+    console.log(i);
+    i2.className = 'fa-solid fa-trash-can';
+    div.append(i2);
+    i2.addEventListener('click', function(){
+        li.remove();
+    })
+
     //  let l = document.createElement('l');
     //  l.className = 'fa-solid fa-trash-can';
     //  l.append(div);
