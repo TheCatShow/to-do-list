@@ -36,3 +36,22 @@ addBtn.addEventListener('click', function (event) {
     //  l.append(div);
     //  li.remove();
 })
+
+function doneTask() {
+    list.addEventListener('click', function (event) {
+        let target = event.target;
+        if (target.classList.contains('fa-sqaure-check')) {
+            target.closest('li').classList.toggle('done');
+            localStorage.setItem('htmlLS', list.innerHTML);
+        }
+    })
+}
+
+function deleteTask() {
+    list.addEventListener('click', function (event) {
+        let target = event.target;
+        if(target.classList.contains('fa-trash-can')) {
+            target.closest('li').remove();
+        }
+    })
+}
